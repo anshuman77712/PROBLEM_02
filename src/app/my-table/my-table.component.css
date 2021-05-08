@@ -1,0 +1,23 @@
+.full-width-table {
+    width: 100%;
+    border: 10px solid aqua;
+}
+
+th {
+    color: white;
+    margin: 10px auto;
+}
+
+td {
+    color: white;
+    margin: 10px auto;
+}
+
+.my-table {
+    width: 75%;
+    margin: 20px auto;
+}
+
+mat-paginator {
+    border: 5px solid gray;
+}

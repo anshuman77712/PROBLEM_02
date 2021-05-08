@@ -1,0 +1,43 @@
+<div class="container ">
+
+    <div class="alert alert-dark text-center" role="alert" style="width: 50%; margin: 10px auto;">
+        Student's Data
+    </div>
+    <div class="mat-elevation-z8 my-table">
+        <!--Table begins here-->
+        <table mat-table class="table table-dark table-striped" matSort aria-label="Elements" style="border: 5px solid gray;">
+            <!-- Roll Column -->
+            <ng-container matColumnDef="Roll">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col">
+                    <h3>Roll Number</h3>
+                </th>
+                <td mat-cell *matCellDef="let row">{{row.Roll}}</td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col">
+                    <h3>Name
+                    </h3>
+                </th>
+                <td mat-cell *matCellDef="let row">{{row.name}}</td>
+            </ng-container>
+
+            <!-- Department Column -->
+            <ng-container matColumnDef="Department">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header scope="col">
+                    <h3>Department</h3>
+                </th>
+                <td mat-cell *matCellDef="let row">{{row.Department}}</td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <!--Table ends here-->
+        <!--Adding the paginator here-->
+          <!--The attributes of the paginator cane be used to regulate the pageSizeOptions-->
+        <mat-paginator #paginator [length]="dataSource?.data?.length" [pageIndex]="0" [pageSize]="6" [pageSizeOptions]="[2, 4, 8,10]">
+        </mat-paginator>
+        <!--Paginator ends here-->
+    </div>
+</div>
